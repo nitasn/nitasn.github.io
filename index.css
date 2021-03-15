@@ -23,15 +23,11 @@ main {
 }
 
 main .buttons {
-    width: min(90vw, 1000px);
+    width: min(90vw, 62.5rem);
     /* border: 1px solid black; */
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: space-between;
-}
-
-footer {
-    /* border: 1px solid green; */
+    /* flex-wrap: wrap; */
 }
 
 html {
@@ -46,9 +42,6 @@ body {
 }
 
 footer {
-    /* be at bottom of page */
-    /* margin-top: auto; */
-
     display:flex;
     justify-content: center;
 }
@@ -76,7 +69,6 @@ footer .heart-images:hover .filled {
 
 @media only screen and (max-width : 49rem) {
     main .buttons {
-        /* flex-direction: column; */
         flex-wrap: wrap;
         justify-content: space-evenly;
         width: 30rem;

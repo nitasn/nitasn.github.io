@@ -1,0 +1,86 @@
+* {
+    font-family: "Cutive Mono", monospace;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    background: #fdefe2;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    justify-content: space-between;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+main .content-wrap {
+    max-width: min(89%, 40rem);
+}
+
+main .content-wrap img {
+    max-width: 100%;
+    border: 1px #F5C8A3 solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+footer {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+footer .nav-btns {
+    width: min(90vw, 75rem);
+    /* border-style: solid; */
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .rect-btn {
+    overflow-wrap: normal;
+    font-size: 1.3rem;
+}
+
+@media only screen 
+and (max-width : 71rem) {
+    footer .rect-btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen 
+and (max-width : 66rem) {
+    footer .rect-btn {
+        font-size: 1.15rem;
+    }
+}
+
+@media only screen 
+and (max-width : 64rem) {
+    footer .nav-btns {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 30rem;
+    }
+}
+
+@media only screen 
+and (max-width : 22rem) {
+    footer .rect-btn {
+        font-size: 1rem;
+    }
+}
+
+@media only screen 
+and (max-width : 19rem) {
+    footer .rect-btn {
+        font-size: 0.9rem;
+    }
+}

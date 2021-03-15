@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheerApp</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="content-page.css">
+    <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+    <div class="spacer">
+        <!-- is here so that 'main' is pushed down... -->
+        <!-- there are of course better (pure-css) ways to do it... more at: -->
+        <!-- https://stackoverflow.com/questions/42975705/flex-items-evenly-spaced-but-first-item-aligned-left -->
+    </div>
+    <main>
+        <div class="content-wrap">
+            <img src="./cute-animals/welsh-corgi.jpg" alt="cute corgi"/>
+        </div>
+    </main>
+    <footer>
+        <div class="nav-btns">
+            <button class="btn rect-btn" ontouchstart="" id="btn-home">
+                let's try something else
+            </button>
+            <button class="btn rect-btn" ontouchstart="">
+                show me another one
+            </button>
+            <button class="btn rect-btn" ontouchstart="" id="am-better-btn">
+                thanks, i feel better
+            </button>
+        </div>
+    </footer>
+    <script src="content-shared-btns.js"></script>
+</body>
+</html>
