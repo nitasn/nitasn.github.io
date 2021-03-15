@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CheerApp</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="buttons.css"/>
+</head>
+<body>
+    <div class="spacer">
+        <!-- is here so that the header is pushed down... -->
+        <!-- there are of course better (pure-css) ways to do it... more at: -->
+        <!-- https://stackoverflow.com/questions/42975705/flex-items-evenly-spaced-but-first-item-aligned-left -->
+    </div>
+    <header>
+        <h1>I need</h1>
+    </header>
+    <main>
+        <div class="buttons">
+            <button class="btn sqr-btn" ontouchstart="">
+                <div class="content">
+                    a happy song
+                </div>
+            </button>
+            <button class="btn sqr-btn" ontouchstart="">
+                <div class="content">
+                    cute animals
+                </div>
+            </button>
+            <button class="btn sqr-btn" ontouchstart="">
+                <div class="content">
+                    a cheesy inspirational quote
+                </div>
+            </button>
+            <button class="btn sqr-btn" ontouchstart="">
+                <div class="content">
+                    just tell me it's going to be okay
+                </div>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <img src="heart.svg" alt="❤️" width="80"/>
+            <button class="btn rect-btn" ontouchstart="">
+                thanks, i feel better
+            </button>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>

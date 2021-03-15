@@ -1,0 +1,95 @@
+.btn {  
+    background: #f9dcc4;
+    
+    font-size: 1.3rem;
+
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-weight: bold;
+
+    box-shadow: 6px 8px #F5C8A3;
+
+    margin: 1rem;
+    position: relative;
+}
+
+/* force the border to be black (draws black frame above it) */
+.btn::after {
+    --border-width: 2px;
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(0px - var(--border-width));
+    bottom: calc(0px - var(--border-width));
+    left: calc(0px - var(--border-width));
+    right: calc(0px - var(--border-width));
+    border: var(--border-width) solid black;
+}
+
+.btn:focus {
+    outline: none;
+    background: #f8e3d0;
+}
+
+.btn:hover {
+    background: #f8e3d0;
+    cursor: pointer;
+}
+
+.btn {
+    transform: translate(0px, 0px);
+}
+
+.btn:active {
+    box-shadow: 2px 3px #F5C8A3;
+    transform: translate(4px, 5px);
+
+    /* safari is playing weird tricks */
+    color: black;
+}
+
+.sqr-btn {
+    /* todo 11 rem on small screens */
+    width: 12rem;
+    min-width: 12rem;
+    padding: 2rem;	
+    height: 12rem;
+}
+
+.rect-btn {
+    padding: 0.5rem 1rem;
+    /* min-width: 25ch; */
+}
+
+@media only screen 
+and (max-width : 66rem) {
+    .sqr-btn {
+        width: 11rem;
+        min-width: 11rem;
+        padding: 2rem;	
+        height: 11rem;
+    }
+}
+
+@media only screen 
+and (max-width : 58rem) {
+    .sqr-btn {
+        width: 10rem;
+        min-width: 10rem;
+        padding: 1rem;	
+        height: 10rem;
+    }
+}
+
+@media only screen 
+and (max-width : 53rem) {
+    .sqr-btn {
+        width: 9rem;
+        min-width: 9rem;
+        padding: 1rem;	
+        height: 9rem;
+    }
+    .btn {
+        font-size: 1.15rem;
+    }
+}
