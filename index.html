@@ -44,13 +44,16 @@
     </main>
     <footer>
         <div class="container">
-            <img class="heart-img" src="heart.svg" alt="❤️" width="80" />
-            <!-- onmouseover="this.src='heart-fill.svg'" onmouseout="this.src='heart.svg'"/> -->
+            <div class="heart-images">
+                <img class="empty" src="heart.svg" alt="❤️" width="80" />
+                <img class="filled" src="heart-fill.svg" alt="❤️" width="80" />
+            </div>
             <button class="btn rect-btn" ontouchstart="">
                 thanks, i feel better
             </button>
         </div>
     </footer>
     <script src="index.js"></script>
+    <img src="./heart-fill.svg" alt="" style="display: none;">
 </body>
 </html>

@@ -62,9 +62,16 @@ footer .container {
     align-items: center;
 }
 
-footer .container .heart-img:hover {
-    display: block;
-    content: url('./heart-fill.svg');
+footer .heart-images .filled {
+    display: none;
+}
+
+footer .heart-images:hover .empty {
+    display: none;
+}
+
+footer .heart-images:hover .filled {
+    display: unset;
 }
 
 @media only screen and (max-width : 49rem) {
