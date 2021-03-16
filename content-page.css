@@ -22,6 +22,8 @@ main {
 
 main .content-wrap {
     max-width: min(89%, 40rem);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 main .content-wrap img {
