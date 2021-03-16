@@ -29,7 +29,7 @@ const infinite_random_iter = (array) => {
     return {
         next() {
             if (indicesPermutation.length === 0) {
-                return; // kastach. todo does this really help
+                return; // just in case...
             }
             if (idxInPerm === indicesPermutation.length) { // if reached end
                 let newPerm = shuffledIndices(array); // start a new cycle
