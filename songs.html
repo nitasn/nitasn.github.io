@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="content-page.css">
     <link rel="stylesheet" href="buttons.css">
     <link rel="stylesheet" href="content-shrink-btns.css">
+
+    <style>
+        .content-wrap {
+            width: 100%;
+        }
+
+        iframe {
+            min-width: 100%;
+        }
+    </style>
+
 </head>
 <body>
     <div class="spacer">
@@ -21,8 +32,11 @@
     </noscript>
     <main>
         <div class="content-wrap">
-            <img src="" alt="a cute animal" id="main-img"/>
-            <!-- todo place holder img to wait for javascript? -->
+            <iframe id="main-video"
+            width="560" height="315" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+            <!-- <iframe src="https://www.youtube.com/embed/XaCrQL_8eMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         </div>
     </main>
     <footer>
@@ -40,6 +54,6 @@
     </footer>
     <script src="content-shared-btns.js"></script>
     <script src="random-iter.js"></script>
-    <script src="animals.js"></script>
+    <script src="songs.js"></script>
 </body>
 </html>

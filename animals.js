@@ -1,22 +1,26 @@
 'use strict';
 
-const urls = [
-    'foxy.jpg',
-    'kitty.jpg',
-    'welsh-corgi.jpg',
-]
-.map(url => './cute-animals/' + url);
+(function iife() {
 
-const mainImg = document.getElementById('main-img');
-const againBtn = document.getElementById('btn-again');
+    const urls = [
+        'foxy.jpg',
+        'kitty.jpg',
+        'welsh-corgi.jpg',
+    ]
+    .map(url => './cute-animals/' + url);
 
 
-const infiniteRandIter = infinite_random_iter(urls);
+    const mainImg = document.getElementById('main-img');
+    const againBtn = document.getElementById('btn-again');
 
-function changeImage() {
-    mainImg.src = infiniteRandIter.next();
-}
 
-againBtn.addEventListener('click', changeImage);
+    const infiniteRandIter = infinite_random_iter(urls);
 
-changeImage();
+    function changeImage() {
+        mainImg.src = infiniteRandIter.next();
+    }
+
+    againBtn.addEventListener('click', changeImage);
+
+    changeImage();
+})();

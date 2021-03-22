@@ -8,7 +8,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="content-page.css">
     <link rel="stylesheet" href="buttons.css">
-    <link rel="stylesheet" href="content-shrink-btns.css">
+    <style>
+        footer .nav-btns {
+            width: min(80vw, 75rem);
+            /* border-style: solid; */
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        
+        footer .rect-btn {
+            white-space: nowrap;
+            margin-right: 1.5rem;
+        }
+
+        @media only screen 
+        and (max-width : 60rem) {
+            footer .rect-btn {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="spacer">
@@ -16,13 +36,14 @@
         <!-- there are of course better (pure-css) ways to do it... more at: -->
         <!-- https://stackoverflow.com/questions/42975705/flex-items-evenly-spaced-but-first-item-aligned-left -->
     </div>
-    <noscript style="text-align: center">
-        Please enable JavaScript to enjoy this website &lt;3
-    </noscript>
     <main>
         <div class="content-wrap">
-            <img src="" alt="a cute animal" id="main-img"/>
-            <!-- todo place holder img to wait for javascript? -->
+            <span>
+                everything is going to be okay
+            </span>
+            <span>
+                &lt;3
+            </span>
         </div>
     </main>
     <footer>
@@ -30,16 +51,11 @@
             <button class="btn rect-btn" ontouchstart="" id="btn-home">
                 let's try something else
             </button>
-            <button class="btn rect-btn" ontouchstart="" id="btn-again">
-                show me another one
-            </button>
             <button class="btn rect-btn" ontouchstart="" id="btn-am-better">
                 thanks, i feel better
             </button>
         </div>
     </footer>
     <script src="content-shared-btns.js"></script>
-    <script src="random-iter.js"></script>
-    <script src="animals.js"></script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+@media only screen 
+and (max-width : 71rem) {
+    footer .rect-btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen 
+and (max-width : 66rem) {
+    footer .rect-btn {
+        font-size: 1.15rem;
+    }
+}
+
+@media only screen 
+and (max-width : 64rem) {
+    footer .nav-btns {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 30rem;
+    }
+}
+
+@media only screen 
+and (max-width : 22rem) {
+    footer .rect-btn {
+        font-size: 1rem;
+    }
+}
+
+@media only screen 
+and (max-width : 19rem) {
+    footer .rect-btn {
+        font-size: 0.9rem;
+    }
+}
