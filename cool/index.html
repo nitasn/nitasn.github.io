@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="author" content="Nitsan BenHanoch">
+    
+    <title>Cool Translator</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+    <script src="scripts.js"></script>
+
+    <style type="text/css">
+        textarea {
+            border-collapse:collapse;
+            border: #000 2px solid;
+            border-style: dashed;
+            resize: none;
+            /*margin: 0;*/
+            padding: 10px;
+            font-size: 22px; 
+
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*#clear-btn + #main-input { margin-top: -6px; }*/
+
+        #main-output + #copy-btn { margin-top: -13px; }
+
+        #header {
+            background-color: #e9ecef;
+            width: 100%;
+            height: 100px;
+        }
+
+        #input-area {
+            display: inline-block;
+            display: table;
+            margin: 0 auto;
+        }
+
+    </style>
+
+    <div class="text-center" id="header">
+        <br/>
+        <h1 id="delme">Cool Translator</h1>
+    </div>
+
+    <br/>
+
+    <div id="input-area">
+
+        <table id="menu-table"> <tr>
+
+            <td> <label id="paste-btn" role="button" onclick="pasteInput()"
+                    style="color: #4572be"
+                    onmouseout="event.target.setAttribute('style','text-decoration: normal; color: #4572be')"
+                    onmouseover="event.target.setAttribute('style','text-decoration: underline; color: black')">
+                quick paste
+            </label> </td>
+
+            <td style="text-align:right"> <label id="clear-btn" role="button" onclick="clearInput()"
+                    style="color: #e55d68"
+                    onmouseout="event.target.setAttribute('style','text-decoration: normal; color: #e55d68')"
+                    onmouseover="event.target.setAttribute('style','text-decoration: underline; color: black')">
+                clear input
+            </label> </td>
+
+        </tr> </table>
+
+        <textarea id="main-input" rows="7" placeholder="enter text here..."></textarea>
+    </div>
+
+    <br/>
+
+    <div id="output-area" class="container text-center">
+        <p id="main-output" class="container" style="font-size:28px"></p>
+
+        <p class="container text-center" id="copy-btn" role="button" onclick="copyOutput()"
+            style="color: #4572be"
+            onmouseout="event.target.setAttribute('style','text-decoration: normal; color: #4572be')"
+            onmouseover="event.target.setAttribute('style','text-decoration: underline; color: black')">
+        copy output
+        </p> 
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

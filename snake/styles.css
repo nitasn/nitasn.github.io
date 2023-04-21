@@ -1,0 +1,61 @@
+html {
+	background-color: #ddd;
+	font-family: monospace;
+	
+	touch-action:pan-down;
+	/*touch-action: none;*/
+}
+
+body {
+  overscroll-behavior: contain;
+}
+
+.txt-box, #restart-btn, #debug-btn {
+	background-color: #111;
+	color: #eee;
+	border: 1px solid #ddd;
+	padding: 15px;
+	margin: 15px;
+}
+
+.game-cell {
+	border-radius: 2px;
+	color: #421c52;
+	text-align: center;
+	/*height: 21px;
+	width: 21px;*/
+}
+
+#game-board {
+	background-color: #000; /* cell border color */
+	border-radius: 5px;
+
+	width:  60vmin;
+	height: 60vmin;
+
+	/*<center>*/
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%); /* for IE 9 */
+		-webkit-transform: translate(-50%, -50%); /* for Safari */
+	/*</center>*/
+
+	box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+	table-layout:fixed;
+}
+
+#restart-btn {
+	border-radius: 6px;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+}
+
+#debug-btn {
+	border-radius: 6px;
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+}
