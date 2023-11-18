@@ -1,0 +1,85 @@
+html * {
+  padding: 0;
+  font-size: 2rem;
+  font-family: monospace;
+}
+
+*,
+::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.main input {
+  padding: 1.5rem 2rem;
+  min-width: 40ch;
+  align-self: center;
+  /* text-align: center; */
+  border-radius: 0.5rem;
+
+  font-size: 1.5rem;
+
+  background-color: #eee;
+
+  border: 3px solid darkcyan;
+  outline: 3px solid darkcyan;
+  outline-offset: -3px;
+
+  transition: all 300ms;
+}
+
+.main input:focus {
+  outline-offset: 3px;
+}
+
+.main .output {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.main .btn-copy {
+  align-self: center;
+  padding: 1.25rem 1.75rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+
+  background-color: darkcyan;
+  color: white;
+  border: none;
+
+  cursor: pointer;
+
+  outline: 3px solid darkcyan;
+  outline-offset: -3px;
+
+  transition: outline-color 50ms, background-color 50ms, outline-offset 300ms;
+}
+
+.main .btn-copy:focus {
+  outline-offset: 3px;
+}
+
+.main .btn-copy:active {
+  --_color: hsl(180, 100%, 30%);
+  outline-color: var(--_color);
+  background-color: var(--_color);
+}
