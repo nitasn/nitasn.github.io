@@ -6,8 +6,9 @@
   font-size: 1.75rem;
   border-radius: 0.5rem;
   text-align: center;
-  color: black;
   background-color: #eee;
+  background-color: #e2e2e2;
+
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   animation: rise_stay_fall 2s ease-in-out forwards;
 }
@@ -25,11 +26,12 @@
 
 .toast h3 {
   color: darkcyan;
-}
-.toast h3, p {
   margin-block: 0.5rem;
 }
 .toast p {
   margin-top: 1rem;
   text-align: start;
+  background-color: #eee;
+  margin-block: 0.5rem;
+  color: black;
 }

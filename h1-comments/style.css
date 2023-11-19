@@ -13,7 +13,6 @@ html * {
 html,
 body {
   margin: 0;
-  min-height: 100vh;
 }
 
 body {
@@ -21,6 +20,8 @@ body {
   align-items: center;
   flex-direction: column;
   padding-block: 3rem;
+  background-color: #ddd;
+  min-height: 100vh;
 }
 
 .inputs, .controls {
@@ -36,7 +37,7 @@ input[type="text"] {
 
   font-size: 1.5rem;
 
-  background-color: #eee;
+  background-color: #e2e2e2;
 
   border: 3px solid darkcyan;
   outline: 3px solid darkcyan;
@@ -59,6 +60,10 @@ input[type="text"]:focus {
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   background-color: rgb(213 224 223);
+  
+  background-color: #eee;
+  background-color: #e2e2e2;
+  color: darkcyan;
 }
 
 .btn-copy {
