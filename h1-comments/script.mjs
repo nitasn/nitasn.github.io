@@ -19,17 +19,38 @@ const styles = {
   6: "#",
 };
 
-function getInput() {
-  return mainInput.value.trim() || mainInput.placeholder.trim();
-}
-
-function updateOutput() {
+function borderAccordingToState() {
   const [first, second] = styles[radiosInput.value];
   const options = { char: second ?? first, lineLength: rangeInput.value };
-  const result = borderify(getInput(), options).toUpperCase();
+  const input = mainInput.value.trim() || mainInput.placeholder.trim();
+  const result = borderify(input, options);
   const output = first + result.substring(1, result.length - 1) + first;
-  mainOutput.innerText = output;
+  return output.toUpperCase();
 }
+
+function onStateChanged() {
+  localStorage.setItem("rangeInput.value", rangeInput.value);
+  localStorage.setItem("radiosInput.value", radiosInput.value);
+
+  rangeSpan.innerText = `Length: ${rangeInput.value}`;
+  radiosSpan.innerText = `Style: ${styles[radiosInput.value]}`;
+
+  mainOutput.innerText = borderAccordingToState();
+}
+
+rangeInput.value = localStorage.getItem("rangeInput.value");
+radiosInput.value = localStorage.getItem("radiosInput.value");
+
+rangeInput.addEventListener("input", onStateChanged);
+radiosInput.addEventListener("input", onStateChanged);
+mainInput.addEventListener("input", onStateChanged);
+
+mainBtn.addEventListener("click", copyToClipboard);
+
+mainForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  copyToClipboard();
+});
 
 function copyToClipboard() {
   navigator.clipboard
@@ -38,22 +59,4 @@ function copyToClipboard() {
     .catch((err) => toast("Couldn't Copy :(", err?.message));
 }
 
-mainForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  copyToClipboard();
-});
-
-mainBtn.addEventListener("click", copyToClipboard);
-
-rangeInput.addEventListener("input", () => {
-  updateOutput();
-  rangeSpan.innerText = `Length: ${rangeInput.value}`;
-});
-
-radiosInput.addEventListener("input", () => {
-  updateOutput();
-  radiosSpan.innerText = `Style: ${styles[radiosInput.value]}`;
-});
-
-mainInput.addEventListener("input", updateOutput);
-updateOutput();
+onStateChanged(); // set everything up
