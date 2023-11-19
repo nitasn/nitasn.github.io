@@ -1,7 +1,7 @@
 .toast {
   position: absolute;
   margin-inline: auto;
-  bottom: 3rem;
+  bottom: 2rem;
   padding: 1.25rem 2.5rem;
   font-size: 1.75rem;
   border-radius: 0.5rem;
@@ -23,6 +23,9 @@
   }
 }
 
+.toast h3 {
+  color: darkcyan;
+}
 .toast h3, p {
   margin-block: 0.5rem;
 }

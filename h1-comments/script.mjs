@@ -2,21 +2,21 @@ import { borderify } from "./h1-comment.mjs";
 import toast from "./toast.mjs";
 
 const mainInput = document.querySelector(".main input");
-const mainOutput = document.querySelector(".main .output");
+const mainOutput = document.querySelector(".output");
 const mainForm = document.querySelector("form.main");
 const rangeInput = document.querySelector(".range input");
 const rangeSpan = document.querySelector(".range span");
 const radiosInput = document.querySelector(".radios input");
 const radiosSpan = document.querySelector(".radios span");
-const mainBtn = document.querySelector('.main button[type="submit"]');
+const mainBtn = document.querySelector(".btn-copy");
 
 const styles = {
-  1: '/',
-  2: '/*',
-  3: '/-',
-  4: '*',
-  5: '-',
-  6: '#',
+  1: "/",
+  2: "/*",
+  3: "/-",
+  4: "*",
+  5: "-",
+  6: "#",
 };
 
 function getInput() {
@@ -31,13 +31,19 @@ function updateOutput() {
   mainOutput.innerText = output;
 }
 
-mainForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+function copyToClipboard() {
   navigator.clipboard
     .writeText(mainOutput.innerText)
     .then(() => toast("Copied :)"))
     .catch((err) => toast("Couldn't Copy :(", err?.message));
+}
+
+mainForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  copyToClipboard();
 });
+
+mainBtn.addEventListener("click", copyToClipboard);
 
 rangeInput.addEventListener("input", () => {
   updateOutput();
