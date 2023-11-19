@@ -92,3 +92,9 @@ input[type="text"]:focus {
   outline-color: var(--_color);
   background-color: var(--_color);
 }
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

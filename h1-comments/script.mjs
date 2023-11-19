@@ -4,17 +4,31 @@ import toast from "./toast.mjs";
 const mainInput = document.querySelector(".main input");
 const mainOutput = document.querySelector(".main .output");
 const mainForm = document.querySelector("form.main");
-const range = document.querySelector("input[type='range']");
+const rangeInput = document.querySelector(".range input");
 const rangeSpan = document.querySelector(".range span");
+const radiosInput = document.querySelector(".radios input");
+const radiosSpan = document.querySelector(".radios span");
 const mainBtn = document.querySelector('.main button[type="submit"]');
+
+const styles = {
+  1: '/',
+  2: '/*',
+  3: '/-',
+  4: '*',
+  5: '-',
+  6: '#',
+};
 
 function getInput() {
   return mainInput.value.trim() || mainInput.placeholder.trim();
 }
 
 function updateOutput() {
-  const options = { char: "/", lineLength: range.value };
-  mainOutput.innerText = borderify(getInput(), options).toUpperCase();
+  const [first, second] = styles[radiosInput.value];
+  const options = { char: second ?? first, lineLength: rangeInput.value };
+  const result = borderify(getInput(), options).toUpperCase();
+  const output = first + result.substring(1, result.length - 1) + first;
+  mainOutput.innerText = output;
 }
 
 mainForm.addEventListener("submit", (e) => {
@@ -25,9 +39,14 @@ mainForm.addEventListener("submit", (e) => {
     .catch((err) => toast("Couldn't Copy :(", err?.message));
 });
 
-range.addEventListener("input", () => {
+rangeInput.addEventListener("input", () => {
   updateOutput();
-  rangeSpan.innerText = `Length: ${range.value}`;
+  rangeSpan.innerText = `Length: ${rangeInput.value}`;
+});
+
+radiosInput.addEventListener("input", () => {
+  updateOutput();
+  radiosSpan.innerText = `Style: ${styles[radiosInput.value]}`;
 });
 
 mainInput.addEventListener("input", updateOutput);
