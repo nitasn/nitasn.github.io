@@ -4,6 +4,8 @@ import toast from "./toast.mjs";
 const mainInput = document.querySelector(".main input");
 const mainOutput = document.querySelector(".main .output");
 const mainForm = document.querySelector("form.main");
+const range = document.querySelector("input[type='range']");
+const rangeSpan = document.querySelector(".range span");
 const mainBtn = document.querySelector('.main button[type="submit"]');
 
 function getInput() {
@@ -11,15 +13,21 @@ function getInput() {
 }
 
 function updateOutput() {
-  mainOutput.innerText = borderify(getInput()).toUpperCase();
+  const options = { char: "/", lineLength: range.value };
+  mainOutput.innerText = borderify(getInput(), options).toUpperCase();
 }
 
 mainForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  // Promise.reject({ message: "Test Error" })
-  navigator.clipboard.writeText(mainOutput.innerText)
+  navigator.clipboard
+    .writeText(mainOutput.innerText)
     .then(() => toast("Copied :)"))
     .catch((err) => toast("Couldn't Copy :(", err?.message));
+});
+
+range.addEventListener("input", () => {
+  updateOutput();
+  rangeSpan.innerText = `Length: ${range.value}`;
 });
 
 mainInput.addEventListener("input", updateOutput);

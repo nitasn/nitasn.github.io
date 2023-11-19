@@ -11,9 +11,8 @@ export function borderify(text, { char = "/", lineLength = 73 } = {}) {
   if (lineLength % 2 != 1) throw Error("lineLength must be an odd number");
   if (char.length !== 1) throw Error("`char` param has to be a single char");
 
-  const horizontalBorder = Array(lineLength).fill(char).join("");
-
-  const verticalBorder = Array(3).fill(char).join("");
+  const horizontalBorder = char.repeat(lineLength);
+  const verticalBorder = char.repeat(3);
   const preText = verticalBorder + " ";
   const postText = " " + verticalBorder;
 

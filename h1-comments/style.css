@@ -1,6 +1,6 @@
 html * {
   padding: 0;
-  font-size: 2rem;
+  margin: 0;
   font-family: monospace;
 }
 
@@ -23,17 +23,15 @@ body {
   padding: 5rem;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+.inputs, .controls {
+  margin-bottom: 3rem;
 }
 
-.main input {
+input[type="text"] {
   padding: 1.5rem 2rem;
-  min-width: 40ch;
-  align-self: center;
-  /* text-align: center; */
+  width: 40ch;
+  margin-inline: auto;
+  display: block;
   border-radius: 0.5rem;
 
   font-size: 1.5rem;
@@ -48,16 +46,20 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
-.main input:focus {
+input[type="text"]:focus {
   outline-offset: 3px;
 }
 
-.main .output {
+.output {
   font-size: 1.5rem;
   line-height: 1.4;
+  position: absolute;
+  bottom: 12rem;
+  right: 50%;
+  translate: 50% 0;
 }
 
-.main .btn-copy {
+.btn-copy {
   align-self: center;
   padding: 1.25rem 1.75rem;
   font-size: 1.5rem;
@@ -75,13 +77,17 @@ body {
   transition: outline-color 50ms, background-color 50ms, outline-offset 300ms;
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  display: block;
+  margin-inline: auto;
+  margin-top: 4rem;
 }
 
-.main .btn-copy:focus {
+.btn-copy:focus {
   outline-offset: 3px;
 }
 
-.main .btn-copy:active {
+.btn-copy:active {
   --_color: hsl(180, 100%, 30%);
   outline-color: var(--_color);
   background-color: var(--_color);

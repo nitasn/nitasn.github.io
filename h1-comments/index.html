@@ -4,29 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="toast.css"/>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="toast.css" />
+    <link rel="stylesheet" href="slider.css" />
 
     <script defer type="module" src="h1-comment.mjs"></script>
     <script defer type="module" src="utils.mjs"></script>
     <script defer type="module" src="script.mjs"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+
     <title>h1 comments</title>
   </head>
   <body>
-      <form class="main">
+    <form class="main">
+      <div class="inputs">
         <input type="text" placeholder="type something..." />
-        <pre class="output"></pre>
-        <button type="submit" class="btn-copy">Copy to Clipboard</button>
-      </form>
+      </div>
+      <div class="controls">
+        <label class="range">
+          <span>Length: 73</span>
+          <input type="range" min="43" max="81" value="73" step="2" />
+        </label>
+      </div>
+      <button type="submit" class="btn-copy">Copy to Clipboard</button>
+      <pre class="output"></pre>
+    </form>
 
-      <!-- TODOs
+    <!-- TODOs
       1. UI for "/" or "#" or ";"
       2. Toast at bottom saying "Copied!" -->
-
-      <!-- <div class="toast">
-        zot hodaa
-      </div> -->
   </body>
 </html>
