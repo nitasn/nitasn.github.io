@@ -1,2 +1,9 @@
 compression.js
 lz4.js
+
+# automating uploading bible-code-searcher to production
+package.json
+package-lock.json
+node_modules/
+gulpfile.js
+makefile
