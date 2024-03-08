@@ -4,8 +4,8 @@ const ctx = canvas.getContext('2d');
 // distant (in pixels) between parallel grid lines
 const scale = 100;
 
-// the topleft corner of each block
-const blocks = [
+// the topleft corner of each obstacle point
+const obstacles = [
   [1, 1],
   [2, 1],
   [3, 1],
@@ -92,15 +92,15 @@ function drawText(text, x, y, color = 'rgb(255 255 0 / .3)') {
   ctx.fillText(text, x, y);
 }
 
-function drawBlock(x, y, color = 'purple') {
+function drawObstacle(x, y, color = 'purple') {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, 1, 1);
 }
 
 function drawEverything() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (const [x, y] of blocks) {
-    drawBlock(x, y);
+  for (const [x, y] of obstacles) {
+    drawObstacle(x, y);
   }
   drawGridLines();
   if (whereUserClicked) {
@@ -146,8 +146,7 @@ function nextRepresentableNumber(num, direction) {
 }
 
 function drawIntersections() {
-  const intersectionPoints = [];
-  const intersectionBlocks = [];
+  const intersectionObstacles = [];
 
   const [dx, dy] = vecDiff(whereMouseIs, whereUserClicked);
   
@@ -155,32 +154,28 @@ function drawIntersections() {
   while (true) {
     [x1, y1] = nextLatticePoint(x1, y1, dx, dy);
 
+    // if dx or dy changed signed, we've passed where mouse is, so we're done
     const [dxNow, dyNow] = vecDiff(whereMouseIs, [x1, y1]);
     const goneTooFar = Math.sign(dxNow) != Math.sign(dx) || Math.sign(dyNow) != Math.sign(dy);
     if (goneTooFar) {
       break;
     }
-
-    intersectionPoints.push([x1, y1]);
     
+    // proceed a tiny bit from the lattice point into the center of the cell
     x1 = nextRepresentableNumber(x1, dx);
     y1 = nextRepresentableNumber(y1, dy);
 
     const xGridCell = Math.floor(x1);
     const yGridCell = Math.floor(y1);
-    const isInsideBlock = !!blocks.find(([x, y]) => x == xGridCell && y == yGridCell);
-    if (isInsideBlock) {
-      intersectionBlocks.push([xGridCell, yGridCell]);
+    
+    const isObstacle = !!obstacles.find(([x, y]) => x == xGridCell && y == yGridCell);
+    if (isObstacle) {
+      intersectionObstacles.push([xGridCell, yGridCell]);
     }
   }
 
-  intersectionBlocks.forEach(([x, y], index) => {
-    drawBlock(x, y, 'rgb(255 255 0 / .3)');
+  intersectionObstacles.forEach(([x, y], index) => {
+    drawObstacle(x, y, 'rgb(255 255 0 / .3)');
     drawText(index.toString(), x + 0.05, y + 0.5, 'rgb(255 255 0 / .3)');
-  });
-
-
-  intersectionPoints.forEach(([x, y]) => {
-    drawPoint(x, y, 'gray');
   });
 }
