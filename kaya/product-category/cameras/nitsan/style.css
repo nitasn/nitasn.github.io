@@ -1,0 +1,122 @@
+.tax-product-category .main .products .subtitle {
+  color: rgb(10, 65, 99);
+}
+
+.products-main-area {
+  display: grid;
+  place-content: center;
+
+  .msg-all-products-filtered {
+    margin-left: -250px;
+  }
+}
+
+.products-filters-area {
+  margin-block: calc(max(4.27vw, 20px) - 28px) max(6.4vw, 40px);
+  padding-top: 2rem;
+
+  /* this counter-acts an existing media query */
+  @media (min-width: 991px) {
+    padding-left: 20px;
+  }
+  @media (max-width: 990px) {
+    margin-left: -10px;
+  }
+
+  .products-filters {
+    overflow: hidden;
+    padding-inline-start: 15px;
+
+    .products-filters-header {
+      font-size: 28px;
+      transform: translateX(-8px);
+      margin-bottom: 2rem;
+    }
+  }
+
+  .product-filter {
+    margin-bottom: 2rem;
+    h3 {
+      transform: translateX(-8px);
+      text-shadow: 0 3px 8px rgba(0, 73, 117, 0.2);
+      color: var(--dark-blue);
+    }
+  }
+
+  .numerical.filter span {
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .categorical.filter {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    gap: 6px;
+
+    input[type="checkbox"] {
+      accent-color: var(--dark-blue);
+      transform: translateY(0.175em);
+      width: 1em;
+      height: 1em;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.toggles {
+  display: flex;
+  gap: 2em;
+  margin-top: 2rem;
+}
+
+.toggle {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  transition: opacity 150ms;
+
+  .icon {
+    transition: 300ms ease;
+    transform: scale(1.4);
+    transform-origin: bottom left;
+    opacity: 0.9;
+    text-shadow: 0 3px 8px rgba(0, 73, 117, 0.2);
+  }
+
+  .title {
+    margin: 0;
+    user-select: none;
+  }
+}
+
+body.filter-is-open {
+  .toggle-filter .icon {
+    color: var(--dark-blue);
+  }
+  .toggle-table {
+    opacity: 0.3;
+    pointer-events: none;
+    /* TODO: also disable tab navigation, via tabIndex="-1" */
+  }
+}
+
+body.in-table-mode {
+  .toggle-table .icon {
+    color: var(--dark-blue);
+  }
+  .toggle-filter {
+    opacity: 0.3;
+    pointer-events: none;
+    /* TODO: also disable tab navigation, via tabIndex="-1" */
+  }
+}
+
+.title {
+  font-size: 1.647em;
+  display: block;
+  margin-bottom: 2rem;
+  transition: 300ms linear;
+}

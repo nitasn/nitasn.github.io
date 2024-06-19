@@ -9,3 +9,4 @@ gulpfile.js
 makefile
 
 .vscode
+.DS_Store

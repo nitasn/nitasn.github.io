@@ -1,0 +1,50 @@
+.products-wrapper {
+  align-self: flex-start;
+
+  display: grid;
+  width: 100%;
+  align-items: start;
+  padding-inline: 15px;
+
+  transition: 300ms ease;
+  transition-property: grid-template-columns, gap;
+}
+
+body.filter-is-open .products-wrapper {
+  grid-template-columns: 250px 1fr;
+  gap: 30px;
+
+  transition-delay: 0ms;
+
+  .products-filters {
+    opacity: 1;
+    transition: opacity 600ms ease;
+    transition-delay: 150ms;
+  }
+
+  .product.filtered-out {
+    display: none;
+  }
+}
+
+body:not(.filter-is-open) .products-wrapper {
+  grid-template-columns: 0 1fr;
+  gap: 0;
+
+  transition-delay: 150ms;
+
+  .products-filters {
+    opacity: 0;
+    transition: opacity 250ms ease;
+    transition-delay: 0;
+  }
+
+  .product.filtered-out {
+    display: flex;
+  }
+
+  .msg-all-products-filtered {
+    /* override the element's inline style */
+    display: none !important;
+  }
+}

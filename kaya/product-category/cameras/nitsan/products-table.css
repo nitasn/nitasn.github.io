@@ -1,0 +1,52 @@
+body.in-table-mode {
+  .lil-wrapper-products-container {
+    animation: disappear 150ms ease forwards;
+  }
+  .table-wrapper {
+    animation: reappear 150ms ease forwards;
+    animation-delay: 150ms;
+    opacity: 0;
+  }
+}
+
+body:not(.in-table-mode).table-has-opened-at-least-once {
+  .lil-wrapper-products-container {
+    animation: reappear 150ms ease forwards;
+    animation-delay: 150ms;
+    opacity: 0;
+  }
+  .table-wrapper {
+    animation: disappear 150ms ease forwards;
+  }
+}
+
+@keyframes disappear {
+  from {
+    display: block;
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes reappear {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.table-wrapper {
+  background: white;
+  padding: 3em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  margin-block: max(4.27vw, 20px) max(6.4vw, 40px);
+  position: relative;
+  margin-inline: 1em;
+}

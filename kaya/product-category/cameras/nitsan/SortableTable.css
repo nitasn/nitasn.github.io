@@ -1,0 +1,38 @@
+.sortable-table {
+  display: grid;
+  gap: 1em;
+  align-items: center;
+  justify-items: center;
+  overflow-x: scroll;
+
+  .sortable-table-head, .sortable-table-body, .sortable-table-row {
+    /* these are purely for css selecting. the grid-items are .sortable-table-column */
+    display: contents;
+  }
+
+  .sortable-table-head {
+    font-weight: bold;
+  }
+
+  .sortable-table-column {
+    display: block;
+  }
+
+  .icon {
+    margin-inline-start: 0.25em;
+  }
+
+  .sortable-table-row:last-child {
+    /* decorative element: an almond-white strip at the bottom of the table */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -5px;
+      height: 10px;
+      background-color: #faebd7;
+      z-index: 12;
+    }
+  }
+}
