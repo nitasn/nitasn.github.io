@@ -1,0 +1,109 @@
+html * {
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+*,
+::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 3rem;
+  background-color: #ddd;
+  min-height: 100vh;
+}
+
+.inputs, .controls {
+  margin-bottom: 3rem;
+}
+
+input[type="text"] {
+  padding: 1.5rem 2rem;
+  width: 40ch;
+  margin-inline: auto;
+  display: block;
+  border-radius: 0.5rem;
+
+  font-size: 1.5rem;
+
+  background-color: #e2e2e2;
+
+  border: 3px solid darkcyan;
+  outline: 3px solid darkcyan;
+  outline-offset: -3px;
+
+  transition: all 300ms;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+input[type="text"]:focus {
+  outline-offset: 3px;
+}
+
+.output {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-sizing: content-box;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(213 224 223);
+  
+  background-color: #eee;
+  background-color: #e2e2e2;
+  color: darkcyan;
+  color: rgb(5, 77, 77);
+  color: rgb(23 73 73);
+}
+
+.btn-copy {
+  align-self: center;
+  padding: 1.25rem 1.75rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+
+  background-color: darkcyan;
+  color: white;
+  border: none;
+
+  cursor: pointer;
+
+  outline: 3px solid darkcyan;
+  outline-offset: -3px;
+
+  transition: outline-color 50ms, background-color 50ms, outline-offset 300ms;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  display: block;
+  margin-inline: auto;
+  margin-top: 3.5rem;
+}
+
+.btn-copy:focus {
+  outline-offset: 3px;
+}
+
+.btn-copy:active {
+  --_color: hsl(180, 100%, 30%);
+  outline-color: var(--_color);
+  background-color: var(--_color);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

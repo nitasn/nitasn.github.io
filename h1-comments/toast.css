@@ -1,0 +1,37 @@
+.toast {
+  position: absolute;
+  margin-inline: auto;
+  bottom: 2rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.75rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: #eee;
+  background-color: #e2e2e2;
+
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  animation: rise_stay_fall 2s ease-in-out forwards;
+}
+
+@keyframes rise_stay_fall {
+  0%, 100% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  10%, 90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast h3 {
+  color: darkcyan;
+  margin-block: 0.5rem;
+}
+.toast p {
+  margin-top: 1rem;
+  text-align: start;
+  background-color: #eee;
+  margin-block: 0.5rem;
+  color: black;
+}
