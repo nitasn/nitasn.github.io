@@ -12,24 +12,6 @@ textarea {
     margin-right: auto;
 }
 
-/*
-another way to centerize:
-
-<style>
-    div.justified {
-        display: flex;
-        justify-content: center;
-    }
-</style>
-
-<div class="justified">
-    <textarea>Textarea</textarea>
-</div>
-
-https://www.pornhub.com/view_video.php?viewkey=ph5c92916b762bd
-https://www.pornhub.com/view_video.php?viewkey=ph5cfa246851a36
-*/
-
 #main-input + #output-area { margin-top: 10px; }
 
 #header {
